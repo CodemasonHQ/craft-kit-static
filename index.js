@@ -3,8 +3,9 @@ module.exports = {
   default: ["nginx"],
   masonJson: {
     nginx: {
-      name: 'web',
-      image: 'nginx:alpine',
+      name: 'web', 
+      build: '.',
+      base: 'nginx:alpine',
       type: 'service',
       volumes: {
         './public':'/usr/share/nginx/html'
